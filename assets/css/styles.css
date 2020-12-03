@@ -34,30 +34,24 @@ body {
 
 .flexContainer {
   display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .flex-dir-row {
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .flex-dir-column {
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .flex-dir-row-rev {
   flex-direction: row-reverse;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .flex-dir-column-rev {
   flex-direction: column-reverse;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 svg {
