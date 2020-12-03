@@ -5,23 +5,30 @@
 body {
   font-family: sans-serif;
 
-  --main-axis-text-margin: -100px;
-  --addit-axis-text-margin: calc(var(--main-axis-text-margin)*1.3);
+  height: 90vh;
+
+  --main-axis-text-margin: -30px;
+  --cross-axis-text-margin: calc(var(--main-axis-text-margin)*2);
+  --main-hint-text: 'Основная ось';
+  --cross-hint-text: 'Вспомогательная ось';
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border: 10px solid black;
+  width: 500px;
+  height: 500px;
 }
 
 .justyfy-align-item-hint {
   padding: 4px 10px;
 }
 
-.container {
-  border: 10px solid black;
-  position: relative;
-  width: 500px;
-  height: 500px;
-}
-
 .item {
-  width: 50px;
+  width: 50px;                                                            
   height: 50px;
 
   font-size: 2em;
@@ -34,8 +41,9 @@ body {
 
 .flexContainer {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  /* Проверить задав flex-end */
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .flex-dir-row {
@@ -54,31 +62,36 @@ body {
   flex-direction: column-reverse;
 }
 
-svg {
-  width: 50px;
-  height: 50px;
-  fill: black;
-  display: none;
+.svg-container {
+  position: relative;
 }
 
-.up {
-  fill: blue;
-}
-
-.flex-dir-row::before {
+.svg-container::before {
   position: absolute;
-  content: 'Основная ось Вправо';
+  content: var(--main-hint-text);
   color: blue;
 
   bottom: var(--main-axis-text-margin);
 }
 
-.flex-dir-row::after {
+.svg-container::after {
   position: absolute;
-  content: 'Вспомогат ось Вниз';
+  content: var(--cross-hint-text);
   color: red;
 
-  bottom: var(--addit-axis-text-margin);
+  bottom: var(--cross-axis-text-margin);
+}
+
+.svg-container::before,
+.svg-container::after {
+  left: 0;
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+  fill: black;
+  display: none;
 }
 
 .flex-dir-row + .svg-container > .right {
@@ -91,22 +104,6 @@ svg {
   display: inline;
 }
 
-.flex-dir-column::before {
-  position: absolute;
-  content: 'Основная ось Вниз';
-  color: blue;
-
-  bottom: var(--main-axis-text-margin);
-}
-
-.flex-dir-column::after {
-  position: absolute;
-  content: 'Вспомогат ось Вправо';
-  color: red;
-
-  bottom: var(--addit-axis-text-margin);
-}
-
 .flex-dir-column + .svg-container > .down{
   fill: blue;
   display: inline;
@@ -117,22 +114,6 @@ svg {
   display: inline;
 }
 
-.flex-dir-row-rev::before {
-  position: absolute;
-  content: 'Основная ось Влево';
-  color: blue;
-
-  bottom: var(--main-axis-text-margin);
-}
-
-.flex-dir-row-rev::after {
-  position: absolute;
-  content: 'Вспомогат ось Вниз';
-  color: red;
-
-  bottom: var(--addit-axis-text-margin);
-}
-
 .flex-dir-row-rev + .svg-container > .left {
   fill: blue;
   display: inline;
@@ -141,22 +122,6 @@ svg {
 .flex-dir-row-rev + .svg-container > .down {
   fill: red;
   display: inline;
-}
-
-.flex-dir-column-rev::before {
-  position: absolute;
-  content: 'Основная ось Вверх';
-  color: blue;
-
-  bottom: var(--main-axis-text-margin);
-}
-
-.flex-dir-column-rev::after {
-  position: absolute;
-  content: 'Вспомогат ось Вправо';
-  color: red;
-
-  bottom: var(--addit-axis-text-margin);
 }
 
 .flex-dir-column-rev + .svg-container > .up {
