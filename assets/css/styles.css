@@ -8,6 +8,9 @@ body {
 
 .container {
   border: 10px solid black;
+  position: relative;
+  width: 500px;
+  height: 500px;
 }
 
 .item {
@@ -24,4 +27,92 @@ body {
 
 .flexContainer {
   display: flex;
+}
+
+.flex-dir-row {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-dir-column {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-dir-row-rev {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-dir-column-rev {
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-dir-row::before {
+  position: absolute;
+  content: 'Основная ось Вправо';
+  color: blue;
+
+  bottom: -40px;
+}
+
+.flex-dir-row::after {
+  position: absolute;
+  content: 'Вспомогат ось Вниз';
+  color: red;
+
+  bottom: -60px;
+}
+
+.flex-dir-column::before {
+  position: absolute;
+  content: 'Основная ось Вниз';
+  color: blue;
+
+  bottom: -40px;
+}
+
+.flex-dir-column::after {
+  position: absolute;
+  content: 'Вспомогат ось Вправо';
+  color: red;
+
+  bottom: -60px;
+}
+
+.flex-dir-row-rev::before {
+  position: absolute;
+  content: 'Основная ось Влево';
+  color: blue;
+
+  bottom: -40px;
+}
+
+.flex-dir-row-rev::after {
+  position: absolute;
+  content: 'Вспомогат ось Вниз';
+  color: red;
+
+  bottom: -60px;
+}
+
+.flex-dir-column-rev::before {
+  position: absolute;
+  content: 'Основная ось Вверх';
+  color: blue;
+
+  bottom: -40px;
+}
+
+.flex-dir-column-rev::after {
+  position: absolute;
+  content: 'Вспомогат ось Вправо';
+  color: red;
+
+  bottom: -60px;
 }
