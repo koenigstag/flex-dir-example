@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  border: 10px solid black;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+
+  font-size: 2em;
+  color: white;
+  text-align: center;
+
+  background-color: teal;
+  border: 5px solid red;
+}
