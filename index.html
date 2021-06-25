@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script defer src="./assets/js/index.js"></script>
   </head>
   <body>
     <main>
-      <div class="container flexContainer flex-dir-row-rev">
+      <div
+        class="container flexContainer flexDirHint other flex-dir-row just-flex-start alignI-flex-start alignC-flex-start"
+        id="flex-container"
+      >
         <div class="item">
           1
         </div>
@@ -67,6 +70,57 @@
             d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"
           />
         </svg>
+      </div>
+
+      <div class="flexContainer just-space-evenly selections" id="selections">
+        <div>
+          <label for="direction">Direction</label>
+          <select name="direction" id="direction">
+            <option value="flex-dir-row">Row</option>
+            <option value="flex-dir-column">Column</option>
+            <option value="flex-dir-row-rev">Row reverse</option>
+            <option value="flex-dir-column-rev">Column reverse</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="just-content">Justify-content</label>
+          <select name="just-content" id="just-content">
+            <option value="just-flex-start">Flex start</option
+            >\
+            <option value="just-flex-end">Flex end</option>
+            <option value="just-center">Flex center</option>
+            <option value="just-space-around">Space-around</option>
+            <option value="just-space-between">Space-between</option>
+            <option value="just-space-evenly">Space-evenly</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="align-items">Align items</label>
+          <select name="align-items" id="align-items">
+            <option value="alignI-flex-start">Flex start</option
+            >\
+            <option value="alignI-flex-end">Flex end</option>
+            <option value="alignI-center">Flex center</option>
+            <option value="alignI-space-around">Space-around</option>
+            <option value="alignI-space-between">Space-between</option>
+            <option value="alignI-space-evenly">Space-evenly</option>
+          </select>
+        </div>
+
+        <div hidden>
+          <label for="align-content">Align content</label>
+          <select name="align-content" id="align-content">
+            <option value="alignC-flex-start">Flex start</option
+            >\
+            <option value="alignC-flex-end">Flex end</option>
+            <option value="alignC-center">Flex center</option>
+            <option value="alignC-space-around">Space-around</option>
+            <option value="alignC-space-between">Space-between</option>
+            <option value="alignC-space-evenly">Space-evenly</option>
+          </select>
+        </div>
       </div>
     </main>
   </body>

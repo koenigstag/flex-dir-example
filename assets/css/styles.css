@@ -8,10 +8,10 @@ body {
   height: 90vh;
 
   --main-axis-text-margin: -30px;
-  --cross-axis-text-margin: calc(var(--main-axis-text-margin)*2);
+  --cross-axis-text-margin: calc(var(--main-axis-text-margin) * 2);
   --main-hint-text: 'Основная ось';
   --cross-hint-text: 'Вспомогательная ось';
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ body {
 } */
 
 .item {
-  width: 50px;                                                            
+  width: 50px;
   height: 50px;
 
   font-size: 2em;
@@ -41,15 +41,86 @@ body {
 
 .flexContainer {
   display: flex;
-  /* Проверить задав flex-end */
-  justify-content: flex-start;
-  align-items: flex-start;
+}
 
+.other {
   position: relative;
   margin-top: 40px;
 }
 
-.flexContainer::before {
+.just-flex-start {
+  justify-content: flex-start;
+}
+
+.just-flex-end {
+  justify-content: flex-end;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-space-around {
+  justify-content: space-around;
+}
+
+.just-space-between {
+  justify-content: space-between;
+}
+
+.just-space-evenly {
+  justify-content: space-evenly;
+}
+
+.alignI-flex-start {
+  align-items: flex-start;
+}
+
+.alignI-flex-end {
+  align-items: flex-end;
+}
+
+.alignI-center {
+  align-items: center;
+}
+
+.alignI-space-around {
+  align-items: space-around;
+}
+
+.alignI-space-between {
+  align-items: space-between;
+}
+
+.alignI-space-evenly {
+  align-items: space-evenly;
+}
+
+.alignC-flex-start {
+  align-content: flex-start;
+}
+
+.alignC-flex-end {
+  align-content: flex-end;
+}
+
+.alignC-center {
+  align-content: center;
+}
+
+.alignC-space-around {
+  align-content: space-around;
+}
+
+.alignC-space-between {
+  align-content: space-between;
+}
+
+.alignC-space-evenly {
+  align-content: space-evenly;
+}
+
+.flexDirHint::before {
   content: 'Direction: Row';
   color: teal;
   font-size: 2em;
@@ -76,25 +147,26 @@ body {
 }
 
 .flex-dir-row::before {
-  content: "Direction: Row";
+  content: 'Direction: Row';
 }
 
 .flex-dir-column::before {
-  content: "Direction: Column";
+  content: 'Direction: Column';
 }
 
 .flex-dir-row-rev::before {
-  content: "Direction: Row reverse";
+  content: 'Direction: Row reverse';
 }
 
 .flex-dir-column-rev::before {
-  content: "Direction: Column reverse";
+  content: 'Direction: Column reverse';
 }
 
 .selections {
   position: absolute;
   top: 5%;
-  left: 10%;
+  left: 0%;
+  right: 0%;
 }
 
 .svg-container {
@@ -146,7 +218,7 @@ body {
 }
 
 /* Column */
-.flex-dir-column + .svg-container > .down{
+.flex-dir-column + .svg-container > .down {
   fill: blue;
   display: inline;
   left: 0;
