@@ -23,9 +23,9 @@ body {
   height: 500px;
 }
 
-.justyfy-align-item-hint {
+/* .justyfy-align-item-hint {
   padding: 4px 10px;
-}
+} */
 
 .item {
   width: 50px;                                                            
@@ -44,6 +44,19 @@ body {
   /* Проверить задав flex-end */
   justify-content: flex-start;
   align-items: flex-start;
+
+  position: relative;
+  margin-top: 40px;
+}
+
+.flexContainer::before {
+  content: 'Direction: Row';
+  color: teal;
+  font-size: 2em;
+
+  position: absolute;
+  bottom: 105%;
+  left: -5px;
 }
 
 .flex-dir-row {
@@ -62,12 +75,36 @@ body {
   flex-direction: column-reverse;
 }
 
+.flex-dir-row::before {
+  content: "Direction: Row";
+}
+
+.flex-dir-column::before {
+  content: "Direction: Column";
+}
+
+.flex-dir-row-rev::before {
+  content: "Direction: Row reverse";
+}
+
+.flex-dir-column-rev::before {
+  content: "Direction: Column reverse";
+}
+
+.selections {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+
 .svg-container {
   position: relative;
+  max-width: 110px;
+  height: 50px;
+  margin-top: 10px;
 }
 
 .svg-container::before {
-  position: absolute;
   content: var(--main-hint-text);
   color: blue;
 
@@ -75,61 +112,74 @@ body {
 }
 
 .svg-container::after {
-  position: absolute;
   content: var(--cross-hint-text);
   color: red;
 
-  bottom: var(--cross-axis-text-margin);
+  bottom: calc(var(--cross-axis-text-margin) - 15px);
 }
 
 .svg-container::before,
 .svg-container::after {
+  position: absolute;
   left: 0;
 }
 
-svg {
+.svg {
   width: 50px;
   height: 50px;
   fill: black;
   display: none;
+  position: absolute;
 }
 
+/* Row */
 .flex-dir-row + .svg-container > .right {
   fill: blue;
   display: inline;
+  left: 0;
 }
 
 .flex-dir-row + .svg-container > .down {
   fill: red;
   display: inline;
+  right: 0;
 }
 
+/* Column */
 .flex-dir-column + .svg-container > .down{
   fill: blue;
   display: inline;
+  left: 0;
 }
 
 .flex-dir-column + .svg-container > .right {
   fill: red;
   display: inline;
+  right: 0;
 }
 
+/* Row reverse */
 .flex-dir-row-rev + .svg-container > .left {
   fill: blue;
   display: inline;
+  left: 0;
 }
 
 .flex-dir-row-rev + .svg-container > .down {
   fill: red;
   display: inline;
+  right: 0;
 }
 
+/* Column reverse */
 .flex-dir-column-rev + .svg-container > .up {
   fill: blue;
   display: inline;
+  left: 0;
 }
 
 .flex-dir-column-rev + .svg-container > .right {
   fill: red;
   display: inline;
+  right: 0;
 }
