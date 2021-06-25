@@ -162,13 +162,67 @@ body {
   content: 'Direction: Column reverse';
 }
 
+#settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.settings-btn {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 10px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.settings-btn:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+#settings-check {
+  display: none;
+}
+
 .selections {
   display: none;
+  background-color: slateblue;
+  padding: 10px;
+  border: 4px solid rgb(58, 45, 133);
+  border-radius: 5px;
 
   position: absolute;
-  top: 5%;
-  left: 0%;
-  right: 0%;
+  top: 70px;
+  left: 20px;
+  z-index: 10000;
+}
+
+.selections > div:not(:last-child) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selections > div > label {
+  margin-right: 10px;
+}
+
+.selections div + div {
+  margin-top: 10px;
+}
+
+#settings-check:checked ~ .selections {
+  display: flex;
+  /* align-content: center; */
+  flex-direction: column;
 }
 
 .svg-container {
